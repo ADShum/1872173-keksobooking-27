@@ -1,9 +1,12 @@
-function getRandomInteger(min, max) {
-  const lower = min;
-  const upper = max;
-  return Math.random() * (upper - lower + 1) - lower;
+function getRandomInteger(min, max, round = 1) {
+  if (!min || !max) {
+    return;
+  }
+
+  const lower = Math.min(Math.abs(min), Math.abs(max));
+  const upper = Math.max(Math.abs(min), Math.abs(max));
+  const num = Math.random() * (upper - lower) + lower;
+  return num.toFixed(round);
 }
 
-if (getRandomInteger < 0) {
-  console.log(NaN);
-}
+
