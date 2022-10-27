@@ -1,12 +1,3 @@
-function getRandomInteger(min, max) {
-  const lower = min;
-  const upper = max;
-  return Math.random() * (upper - lower + 1) - lower;
-}
-
-if (getRandomInteger < 0) {
-  console.log(NaN);
-}
 const OFFERS_COUNT = 10;
 const OFFER_TYPES = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const OFFER_CHECKIN = ['12:00', '13:00', '14:00'];
@@ -67,7 +58,7 @@ function createUser () {
       userId = `${randomNumber}`;
     }
   }
-
+  userIds.push(userId);
   return {avatar: `img/avatars/user${userId}.png`};
 }
 
@@ -122,3 +113,4 @@ function buildBookingOffer() {
     location,
   };
 }
+
